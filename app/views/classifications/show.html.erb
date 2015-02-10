@@ -1,2 +1,12 @@
 <h1>Classifications#show</h1>
+
+<p> Name of classification <% = simple_format(@classification.name)%> </p>
+<% @animals.each do |animal| %>
+
+<p> <% = link_to(animal.name,AnimalsController#show)%> </p>
+<p> Number of included animals <% = simple_format(class.range)%> </p>
+
+
+<%end%>
+
 <p>Find me in app/views/classifications/show.html.erb</p>

@@ -1,2 +1,9 @@
 <h1>Classifications#index</h1>
+<% @classifications.each do |class| %>
+
+<p> Name of species <% = simple_format(class.name)%> </p>
+<p> Number of included animals <% = simple_format(class.range)%> </p>
+<p> <% = link_to(class.name, Classifications#show%> </p>
+<%end%>
+
 <p>Find me in app/views/classifications/index.html.erb</p>
