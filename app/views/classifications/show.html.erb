@@ -4,8 +4,14 @@
 <% @animals.each do |animal| %>
 
 <p> <% = link_to(animal.name,AnimalsController#show)%> </p>
-<p> Number of included animals <% = simple_format(class.range)%> </p>
+<p><% if animal.image_url != null%> </p>
+<p><%= image_tag(animal.image_url) %> </p>
 
+<%end%>
+
+<p> <% if animal.recent? == true%> </p>
+
+<p> This was a recent extinction <\p>
 
 <%end%>
 
