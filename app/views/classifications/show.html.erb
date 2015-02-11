@@ -1,10 +1,10 @@
 <h1>Classifications#show</h1>
 
-<p> Name of classification <% = simple_format(@classification.name)%> </p>
-<% @animals.each do |animal| %>
+<p> Name of classification <%= simple_format(controller.classification.name)%> </p>
+<% controller.classification.animals.each do |animal| %>
 
-<p> <% = link_to(animal.name,AnimalsController#show)%> </p>
-<p><% if animal.image_url != null%> </p>
+<p> <%= link_to(animal.name, {:controller => "animals", :action => "show", :id => animal.id})%> </p>
+<p><% if animal.image_url != ""%> </p>
 <p><%= image_tag(animal.image_url) %> </p>
 
 <%end%>
@@ -13,6 +13,7 @@
 
 <p> This was a recent extinction <\p>
 
+<%end%>
 <%end%>
 
 <p>Find me in app/views/classifications/show.html.erb</p>

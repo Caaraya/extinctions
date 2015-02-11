@@ -1,9 +1,12 @@
-<h1>Classifications#index</h1>
-<% @classifications.each do |class| %>
+﻿<h1>Classifications#index</h1>
+<% controller.classifications.each do |object|  %>
 
-<p> Name of species <% = simple_format(class.name)%> </p>
-<p> Number of included animals <% = simple_format(class.range)%> </p>
-<p> <% = link_to(class.name, Classifications#show%> </p>
+<p> Name of species:
+<%= link_to(object.name, {:controller => "classifications", :action => "show", :id => object.id}) %> </p>
+<p> Number of included animals: 
+<%= object.animals.count.to_s%> </p>
+<p></p>
+
 <%end%>
 
 <p>Find me in app/views/classifications/index.html.erb</p>

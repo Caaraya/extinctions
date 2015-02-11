@@ -1,5 +1,6 @@
 class AnimalsController < ApplicationController
+attr_reader :animal
   def show
-    @Animal = Animal.find(params[:id])
+    @animal = Animal.find(params[:id])
   end
 end

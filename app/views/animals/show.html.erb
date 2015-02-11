@@ -1,16 +1,16 @@
 <h1>Animals#show</h1>
 
-<p> Name of animal <% = simple_format(@animal.name)%> </p>
-<p><% if @animal.image_url != null%> </p>
-<p><%= image_tag(@animal.image_url) %> </p>
+<p> Name of animal <%= simple_format(controller.animal.name)%> </p>
+<p><% if controller.animal.image_url != ""%> </p>
+<p><%= image_tag(controller.animal.image_url) %> </p>
 
 <%end%>
-<p><%if common_name != null%> </p>
-<p><%= simple_format(@animal.common_name)%> </p>
+<p><%if controller.animal.common_names != ""%> </p>
+<p><%= simple_format(controller.animal.common_names.name)%> </p>
 
 <%end%>
 
-<p> <% if @animal.recent? == true%> </p>
+<p> <% if controller.animal.recent? == true%> </p>
 
 <p> This was a recent extinction <\p>
 
